@@ -1,0 +1,72 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "c37c59bf3be9339efdd6afe62c079f5d",
+    "packages": [
+        {
+            "name": "devker/vaults",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/arwebcs/vaults.git",
+                "reference": "c443b4b6ade8b7bc3d181a033f67abbdb4744a4b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/arwebcs/vaults/zipball/c443b4b6ade8b7bc3d181a033f67abbdb4744a4b",
+                "reference": "c443b4b6ade8b7bc3d181a033f67abbdb4744a4b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "php": ">=5.6"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Devker\\Vaults\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Soumyanjan Dey",
+                    "email": "arwebcs@gmail.com"
+                }
+            ],
+            "description": "This is a function libraries.",
+            "keywords": [
+                "functions",
+                "libraries",
+                "vaults"
+            ],
+            "support": {
+                "issues": "https://github.com/arwebcs/vaults/issues",
+                "source": "https://github.com/arwebcs/vaults/tree/v1.0.0"
+            },
+            "time": "2023-10-17T05:37:50+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "devker/vaults": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.1"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.2.0"
+}

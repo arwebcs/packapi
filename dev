@@ -1,0 +1,53 @@
+<?php
+
+switch ($argv[1]) {
+
+    case "--help":
+        $fileStructure = require __DIR__ . "/app/Bootstrap/Commands.php";
+        echo $fileStructure['help'];
+        break;
+
+    case "new::controller":
+        $controllerParts = $argv[2];
+        $splitArr = explode("/", $controllerParts);
+        $controllerName = substr(end($splitArr), -10);
+
+        if (substr(end($splitArr), -10) === "Controller") {
+            $controllerName = end($splitArr);
+        } else {
+            $controllerName .= "Controller";
+        }
+
+        if (sizeof($splitArr) > 1) {
+            unset($splitArr[sizeof($splitArr) - 1]);
+            $newDir = "/" . implode("/", $splitArr);
+        } else {
+            $newDir = "";
+        }
+
+        $fileLocation = __DIR__ . "/app/Controllers/" . $newDir;
+
+        if (!file_exists($fileLocation)) {
+            mkdir($fileLocation, 0777, true);
+        }
+
+        if (!($newDir == "" || empty($newDir))) {
+            $newDir = str_replace("/", "\\", $newDir);
+        }
+
+        $namespaceName = 'App\Controllers' . $newDir;
+
+        $controllerFile = $fileLocation . "/" . $controllerName . ".php";
+        if (file_exists($controllerFile)) {
+            die("Directory and/or file already exists\n\n");
+        }
+        $myfile = fopen($controllerFile, "w") or die("Unable to open file!\n\n");
+        $fileStructure = require __DIR__ . "/app/Bootstrap/Commands.php";
+        fwrite($myfile, $fileStructure['controller']);
+        fclose($myfile);
+        break;
+
+    default:
+        die("Command not given properly. Type 'php dev --help' for available commands\n\n");
+        break;
+}

@@ -1,0 +1,33 @@
+{
+    "name": "devker/packapi",
+    "description": "This is a simple API framework developed in core PHP",
+    "type": "project",
+    "keywords": [
+        "framework",
+        "api_framework",
+        "packapi"
+    ],
+    "require": {
+        "php": ">=7.1",
+        "devker/vaults": "dev-main"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Soumyanjan Dey",
+            "email": "arwebcs@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/arwebcs/packapi"
+        }
+    ],
+    "minimum-stability": "dev"
+}
