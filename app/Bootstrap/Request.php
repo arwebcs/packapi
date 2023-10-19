@@ -21,13 +21,7 @@ class Request
             }
         } else {
             foreach ($_POST as $key => $val) {
-                if (self::jsonValidator($val)) {
-                    foreach (json_decode($val, true) as $jkey => $jval) {
-                        $this->data[$jkey] = $jval;
-                    }
-                } else {
-                    $this->data[$key] = $val;
-                }
+                $this->data[$key] = $val;
             }
             foreach ($_FILES as $fileKey => $fileVal) {
                 $this->data[$fileKey] = $fileVal;

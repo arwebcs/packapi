@@ -1,5 +1,9 @@
 # Releases
 
+**Version 1.0.1** - 19.10.2023
+
+- Bug fixed in Request class
+
 **Version 1.0.0** - 17.10.2023
 
 - API framework has been developed
