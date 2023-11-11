@@ -65,15 +65,16 @@ class Query extends Database
     public static function limit($fields_values = [])
     {
 
-        if (empty($fields_values['start']) && $fields_values['start'] !== 0) {
-            $start = "";
-        } else {
-            $start = ($fields_values['start']) - 1;
-        }
         if (empty($fields_values['limit']) && $fields_values['limit'] !== 0) {
             $limit = "";
         } else {
             $limit = $fields_values['limit'] < 0 ? "" : $fields_values['limit'];
+        }
+
+        if (empty($fields_values['start']) && $fields_values['start'] !== 0) {
+            $start = "";
+        } else {
+            $start = (($fields_values['start']) - 1) * $limit;
         }
 
 
