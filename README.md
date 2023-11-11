@@ -1,5 +1,9 @@
 # Releases
 
+**Version 1.0.2** - 12.11.2023
+
+- Limit query updated.
+  
 **Version 1.0.1** - 19.10.2023
 
 - Bug fixed in Request class
