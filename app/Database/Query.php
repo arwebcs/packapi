@@ -62,30 +62,40 @@ class Query extends Database
         return new Query(self::$sql);
     }
 
-    public static function limit($fields_values = [])
+    public static function limit($offset = "", $limit)
     {
 
-        if (empty($fields_values['limit']) && $fields_values['limit'] !== 0) {
+        if (empty($limit) && $limit !== 0) {
             $limit = "";
         } else {
-            $limit = $fields_values['limit'] < 0 ? "" : $fields_values['limit'];
+            $limit = $limit < 0 ? "" : $limit;
         }
 
-        if (empty($fields_values['start']) && $fields_values['start'] !== 0) {
-            $start = "";
+        if (empty($offset) && $offset !== 0) {
+            $offset = "";
         } else {
-            $start = (($fields_values['start']) - 1) * $limit;
+            $offset = $offset <= 0 ? 0 : $offset;
         }
 
 
-        if (empty($start) && $start !== 0 && empty($limit) && $limit !== 0) {
-            self::$sql .= ' ';
+        if (empty($offset) && $offset  !== 0) {
+            self::$sql .= 'LIMIT ' . $limit  . ' ';
         } else {
-            if (empty($limit) && $limit  !== 0) {
-                self::$sql .= 'LIMIT ' . $limit  . ' ';
-            } else {
-                self::$sql .= 'LIMIT ' . $start  . ', ' . $limit . ' ';
-            }
+            self::$sql .= 'LIMIT ' . $offset  . ', ' . $limit . ' ';
+        }
+        return new Query(self::$sql);
+    }
+
+    public static function pagination($pageNo, $records)
+    {
+        $limit = $records <= 0 ? "" : $records;
+
+        if (empty($limit) && $limit  !== 0) {
+            self::$sql .= "";
+        } else {
+            $start = $pageNo <= 0 ? 0 : (($pageNo) - 1) * $limit;
+
+            self::$sql .= 'LIMIT ' . $start  . ', ' . $limit . ' ';
         }
         return new Query(self::$sql);
     }
