@@ -1,5 +1,9 @@
 # Releases
 
+**Version 1.0.3** - 18.01.2024
+
+- Vaults library updated
+
 **Version 1.0.2** - 12.11.2023
 
 - Limit query updated.

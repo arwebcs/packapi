@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/arwebcs/vaults.git",
-                "reference": "c443b4b6ade8b7bc3d181a033f67abbdb4744a4b"
+                "reference": "de961ebc32d8a80e8638ba5e22ecc8fee5ebeb22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/arwebcs/vaults/zipball/c443b4b6ade8b7bc3d181a033f67abbdb4744a4b",
-                "reference": "c443b4b6ade8b7bc3d181a033f67abbdb4744a4b",
+                "url": "https://api.github.com/repos/arwebcs/vaults/zipball/de961ebc32d8a80e8638ba5e22ecc8fee5ebeb22",
+                "reference": "de961ebc32d8a80e8638ba5e22ecc8fee5ebeb22",
                 "shasum": ""
             },
             "require": {
@@ -51,9 +51,9 @@
             ],
             "support": {
                 "issues": "https://github.com/arwebcs/vaults/issues",
-                "source": "https://github.com/arwebcs/vaults/tree/v1.0.0"
+                "source": "https://github.com/arwebcs/vaults/tree/v1.0.1"
             },
-            "time": "2023-10-17T05:37:50+00:00"
+            "time": "2023-12-30T15:55:42+00:00"
         }
     ],
     "packages-dev": [],
